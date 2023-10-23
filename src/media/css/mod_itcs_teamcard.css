@@ -1,0 +1,359 @@
+/**
+* ------------------------------------------------------------------------
+* @package     mod_itcs_teamcard - CSS3 based Module by it-conserv.de
+* @author      it-conserv.de
+* @copyright   2023 it-conserv.de
+* @license     GNU/GPLv3 <http://www.gnu.org/licenses/gpl-3.0.de.html>,
+* @license     CSS Style is licensed under GNU/GPL and resource from http://littlesnippets.net/
+* @link        https://it-conserv.de
+* ------------------------------------------------------------------------
+*/
+
+.teamcard{
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+.teamcard.tc1  div.tc_main{
+	width: 480px;		
+	margin-left: auto;
+	margin-right: auto;
+}
+
+figure.snip0099 {
+  font-family: 'Raleway', Arial, sans-serif;
+  display: block;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  height: 240px;
+  width: 480px;
+  background: #000000;
+}
+
+.teamcard.tc1 figure.snip0099{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.teamcard.tc2 figure.snip0099{
+  float: left;
+}
+
+/* ************************ */
+@media only screen and (min-width: 980px) {
+	.teamcard{
+		text-align: center; /* NEW*/
+	}
+	.teamcard.tc2  div.tc_main{
+		display: inline-block;
+		text-align: left;
+		width: calc(480px + 1%);
+	}
+}
+
+@media only screen and (max-width: 980px) {
+
+	.teamcard.tc2  div.tc_main{
+		float: none;
+		width: 480px;		
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.teamcard.tc2 figure.snip0099{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}	
+}
+/* ************************ */
+
+figure.snip0099 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.snip0099 > img {
+  opacity: 1;
+  filter: blur(0px);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+/* Portrait */
+figure.snip0099 > img.pr {
+    min-height: 100%;
+    width: 50%;
+}
+/* Landscape */
+figure.snip0099 > img.ls {
+    position: absolute;
+    max-height: 100%;
+    width: auto;
+	clip: rect(0px, 242px, 242px, 0px);
+	left:0;
+}
+figure.snip0099.imgr > img {
+  margin-left: 50%;
+}
+figure.snip0099.imgl > img {
+  margin-right: 50%;
+}
+figure.snip0099 figcaption {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+}
+figure.snip0099.imgr figcaption {
+  left: 0;
+}
+figure.snip0099.imgl figcaption {
+  right: 0;
+}
+
+figure.snip0099 figcaption h2,
+figure.snip0099 figcaption p {
+  position: absolute;
+  right: 0;
+  color: #000000;
+  text-align: right;
+  line-height: 1.5em;
+  padding: 10px 0 10px 0px;
+  margin: 0 40px 0 20px;
+}
+figure.snip0099.imgl figcaption h2,
+figure.snip0099.imgl figcaption p {
+    left: 0px;
+	text-align: left;
+	margin: 0 20px 0 40px;	
+}
+figure.snip0099 figcaption h2 {
+  font-size: 1.3em;
+  bottom: 50%;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+figure.snip0099 figcaption h2 span {
+  font-weight: 800;
+}
+figure.snip0099 figcaption p {
+  top: 50%;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+figure.snip0099 .icons {
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+figure.snip0099.imgr .icons {
+  left: 50%;
+  padding-left: 30px;
+}
+figure.snip0099.imgl .icons {
+  right: 50%;
+  padding-right: 30px;
+}
+
+figure.snip0099 .icons i {
+  font-size: 32px;
+  padding: 10px;
+  color: #ffffff;
+  opacity: 0;
+  top: 50%;
+  display: inline-block;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  -webkit-transform: translateX(50px);
+  transform: translateX(50px); 
+}
+
+figure.snip0099 .icons i {
+  font-size: 32px;
+  padding: 10px;
+  color: #ffffff;
+  opacity: 0;
+  top: 50%;
+  display: inline-block;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+figure.snip0099.imgr  i{
+  -webkit-transform: translateX(50px);
+  transform: translateX(50px);  
+}
+figure.snip0099.imgl  i{
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px);
+}
+
+figure.snip0099.imgr .icons a:first-child i {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.snip0099.imgl .icons a:first-child i {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+figure.snip0099 .icons a:nth-child(2) i {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+figure.snip0099.imgr .icons a:nth-child(3) i {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+figure.snip0099.imgl .icons a:nth-child(3) i {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.snip0099:after{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 35px;
+  width: 35px;
+  background-color: #000000;
+  border: 5px double #ffffff;
+  content: '';
+  -webkit-transform: rotate(45deg) translate(-50%, -50%);
+  transform: rotate(45deg) translate(-50%, -50%);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+figure.snip0099:hover > img,
+figure.snip0099.hover > img {
+  opacity: 0.5;
+  filter: blur(5px);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+figure.snip0099:hover i,
+figure.snip0099.hover i {
+  opacity: 0.8;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+figure.snip0099.imgr:hover a:first-child i,
+figure.snip0099.imgr.hover a:first-child i {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+figure.snip0099.imgl:hover a:first-child i,
+figure.snip0099.imgl.hover a:first-child i {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+figure.snip0099:hover a:nth-child(2) i,
+figure.snip0099.hover a:nth-child(2) i {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.snip0099.imgr:hover a:nth-child(3) i,
+figure.snip0099.imgr.hover a:nth-child(3) i {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0099.imgl:hover a:nth-child(3) i,
+figure.snip0099.imgl.hover a:nth-child(3) i {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+@media only screen and (max-width: 500px) {
+
+	.teamcard.tc1  div.tc_main,
+	.teamcard.tc2  div.tc_main{
+		width: 240px;		
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.teamcard.tc1 figure.snip0099,
+	.teamcard.tc2 figure.snip0099	{
+	  display: inline-block;
+	  margin: 10px 1%;
+	  height: 480px;
+	  width: 100%;
+	}
+	
+	/* Portrait */
+	figure.snip0099 > img.pr {
+		min-height: 50%;
+		width: 100%;
+	}
+	/* Landscape */
+	figure.snip0099 > img.ls {
+		position: absolute;
+		max-height: 50%;
+		width: auto;
+		clip: rect(0px, 242px, 242px, 0px);
+		max-width: none;
+	}
+	
+	figure.snip0099.imgr > img,
+	figure.snip0099.imgl > img	{
+	  margin-top: 0;
+	  margin-left: 0;
+	}
+
+	figure.snip0099 figcaption {
+	  position: absolute;
+	  top: 50%;
+	  width: 100%;
+	  height: 50%;
+	  background: #ffffff;
+	}
+	
+	figure.snip0099.imgr figcaption,
+	figure.snip0099.imgl figcaption	{
+	  bottom: 0;
+	  left:0;
+	}
+
+	figure.snip0099 .icons {
+	  width:100%;
+	  padding: 5px;
+	  position: absolute;
+	  top: 50%;
+	  -webkit-transform: translateY(-200%);
+	  transform: translateY(-200%);
+	}
+	figure.snip0099.imgr .icons,
+	figure.snip0099.imgl .icons{
+	  left: 0%;
+	  padding-left: 25%;
+	}
+
+	figure.snip0099 .icons i {
+	  -webkit-transform: translateX(-50px);
+	  transform: translateX(-50px); 
+	}
+
+	figure.snip0099.imgr  i,
+	figure.snip0099.imgl  i{
+	  -webkit-transform: translateX(50px);
+	  transform: translateX(50px);  
+	}
+
+	figure.snip0099:hover i,
+	figure.snip0099.hover i {
+	  opacity: 0.8;
+	  -webkit-transform: translate(0);
+	  transform: translate(0);
+	}
+}

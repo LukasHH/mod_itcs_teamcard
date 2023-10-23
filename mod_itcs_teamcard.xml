@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_itcs_teamcard</name>
+	<author>it-conserv.de</author>
+	<creationDate>October 2023</creationDate>
+	<copyright>Copyright (C) 2023 it-conserv.de. All rights reserved.</copyright>
+	<license>PHP files and modul are licensed under GNU/GPL V3 or later. The CSS-Style is a free ressource from http://littlesnippets.net/ and licensed under GNU/GPL.</license>
+	<authorEmail>info@it-conserv.de</authorEmail>
+	<authorUrl>www.it-conserv.de</authorUrl>
+	<version>4.0.0</version>
+	<description>
+	<![CDATA[
+	<div align="center">
+		<div class="alert alert-success" style="background-color:#DFF0D8;border-color:#D6E9C6;color: #468847;padding: 1px 0;">
+			<h2 style="color: #f39c12;">Show Team Cards</h2>
+			<h4>Team Card Modul with CSS effect, ionicon and custom colors</h4>
+			<p> </p>
+			<h5>Find your ionicon under <a href="https://ionic.io/ionicons/v2" target="_blank">https://ionic.io/ionicons/v2</a></h5>
+			<p>The CSS Style is a free ressource from <a href="http://littlesnippets.net" target="_blank">http://littlesnippets.net</a></p>
+			<p>Copyright 2023 <a href="http://www.it-conserv.de/" title="it-conserv.de" target="_blank">www.it-conserv.de</a>.</p>
+		</div>
+	</div>
+	]]>
+	</description>
+	
+	<files>
+		<filename module="mod_itcs_teamcard">mod_itcs_teamcard.php</filename>
+		<filename>lizenz_gpl.txt</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>src</folder>
+	</files>
+	<media folder="src/media" destination="mod_itcs_teamcard">
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<filename>joomla.asset.json</filename>		
+	</media>
+	
+	<updateservers>
+		<server type="extension" priority="2" name="Modul itcs Team Cards">
+			https://it-conserv.de/phocadownload/module/mod_itcs_teamcard/mod_itcs_teamcard-update.xml
+		</server>
+	</updateservers>
+	<changelogurl>https://it-conserv.de/phocadownload/module/mod_itcs_teamcard/mod_itcs_teamcard-changelog.xml</changelogurl>
+	
+	<config>
+		<fields name="params"  addfieldpath="/modules/mod_itcs_teamcard/fields">
+			<fieldset name="GENERAL_SETTINGS">
+				<field type="itcsdonation" label="ITCS_DONATION" description="ITCS_DONATION_DESC" />
+				<field type="spacer" name="tc_basic_settings" label="TC_BASIC_SETTINGS" />
+				<field name="backcolor" type="color" default="#ffffff" label="TC_BACKCOLOR" description="TC_BACKCOLOR_DESC" />
+				<field name="textcolor" type="color" default="#999999" label="TC_TEXTCOLOR" description="TC_TEXTCOLOR_DESC" />
+				<field name="dcolor" type="color" default="#000000" label="TC_DCOLOR" description="TC_DCOLOR_DESC" />
+				<field name="tc_align" type="list" default="tc2" label="TC_ALIGN" description="TC_ALIGN_DESC">
+					<option value="tc2">TC_FLUID</option>
+					<option value="tc1">TC_ONE</option>
+				</field>
+				<field type="spacer" name="tc_link_basic_settings" label="TC_LINK_BASIC_SETTINGS" />
+				<field name="icon_note" type="note" class="alert alert-info" close="true" label="TC_ICON_NOTE" />
+				
+				<field name="load_ion" type="radio" default="1" label="TC_LOAD_ION" description="TC_LOAD_ION_DESC" checked="checked" class="btn-group btn-group-yesno">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>							
+				
+				<field type="spacer" name="tc_hr1" label="TC_HR" />
+				<field type="spacer" name="tc_link_1" label="TC_LINK_1" />
+				<field name="show_1" type="radio" default="1" label="TC_SHOW" description="TC_SHOW_DESC" checked="checked" class="btn-group btn-yes-no">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="icon_1" type="text" default="ion-ios-home-outline" label="TC_ICON" description="TC_ICON_DESC" />
+				
+				<field type="spacer" name="tc_hr2" label="TC_HR" />
+				<field type="spacer" name="tc_link_2" label="TC_LINK_2" />
+				<field name="show_2" type="radio" default="1" label="TC_SHOW" description="TC_SHOW_DESC" checked="checked" class="btn-group btn-yes-no">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="icon_2" type="text" default="ion-ios-email-outline" label="TC_ICON" description="TC_ICON_DESC" />
+				<field type="spacer" name="tc_hr3" label="TC_HR" />
+
+				<field type="spacer" name="tc_link_3" label="TC_LINK_3" />
+				<field name="show_3" type="radio" default="1" label="TC_SHOW" description="TC_SHOW_DESC" checked="checked" class="btn-group btn-yes-no">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="icon_3" type="text" default="ion-ios-telephone-outline" label="TC_ICON" description="TC_ICON_DESC" />				
+			</fieldset>
+			<fieldset name="TC_CARDS">
+				<field 
+					name="teamcards" 
+					type="subform"
+					label="TC_CARDS" 
+					description="TC_CARDS_DESC"
+					multiple="true" 
+					layout="joomla.form.field.subform.repeatable"
+					groupByFieldset="true"
+				>
+					<form>
+					<fieldset name="tc_teamcards_modal" class="subform-subform">								
+						<field name="tc_image" type="media" default="" label="TC_IMG" description="TC_IMG_DESC" directory="/" filter="" exclude="" stripext="" />						
+						<field name="img_align" type="list" default="imgr" label="TC_IMG_ALIGN" description="TC_IMG_ALIGN_DESC">
+							<option value="imgr">TC_RIGHT</option>
+							<option value="imgl">TC_LEFT</option>
+						</field>
+						<field name="h2_1" type="text" default="Judy" label="TC_H2_1" description="TC_H2_1_DESC" />
+						<field name="h2_2" type="text" default="Havelock" label="TC_H2_2" description="TC_H2_2" />
+						<field name="text" type="textarea" filter="raw" rows="3" cols="20" default="If good things lasted forever, would we appreciate how precious they are?" label="TC_TEXT" description="TC_TEXT_DESC" />
+						<field name="tc_link_settings" type="spacer" label="TC_LINK_SETTINGS" description="TC_LINK_SETTINGS_DESC" />
+						<field name="link_1" type="text" default="" label="TC_LINK_1" description="TC_LINK_DESC" />
+						<field name="link_2" type="text" default="" label="TC_LINK_2" description="TC_LINK_DESC" />
+						<field name="link_3" type="text" default="" label="TC_LINK_3" description="TC_LINK_DESC" />
+					</fieldset>
+					</form>				
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

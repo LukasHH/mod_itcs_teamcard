@@ -1,0 +1,21 @@
+{
+	"$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+	"name": "mod_itcs_teamcard",
+	"version": "4.0.0",
+	"description": "mod_imod_itcs_teamcard modul",
+	"license": "GPL-3.0-or-later",
+	"assets": [
+		{
+			"name": "mod_itcs_teamcard.style",
+			"description": "mod_itcs_teamcard CSS",
+			"type": "style",
+			"uri": "mod_itcs_teamcard/mod_itcs_teamcard.css"
+		},
+		{
+			"name": "mod_itcs_teamcard.ion",
+			"description": "IonIcon CSS",
+			"type": "style",
+			"uri": "mod_itcs_teamcard/ionicons.min.css"
+		}
+	]
+}
