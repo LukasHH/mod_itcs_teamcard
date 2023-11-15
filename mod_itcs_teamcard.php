@@ -15,8 +15,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Factory;
-//use Joomla\CMS\Layout\LayoutHelper;
-//use \Joomla\CMS\Helper\MediaHelper;
 use \Joomla\CMS\HTML\HTMLHelper;
 
 $uniqid				= $module->id;
@@ -29,7 +27,7 @@ $tc_align	= $params->get('tc_align');			// tc1 -> one card centered per row, tc2
 
 
 // LINK_BASIC_SETTINGS
-$load_ion   = $params->get('load_ion');
+$load_ion   = (int)$params->get('load_ion');
 
 $show_1		= $params->get('show_1');
 $icon_1		= $params->get('icon_1');
